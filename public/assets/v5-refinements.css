@@ -395,3 +395,170 @@ body:has(.hero) .site-header:not(.scrolled) .header-cta{background:rgba(250,249,
   }
 }
 
+/* ==========================================================================
+   Minimalist Architectural SVG Icons (Zero Emojis on Mobile & Desktop)
+   ========================================================================== */
+
+.arrow-diag {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.project-meta .arrow-diag {
+  width: 32px;
+  height: 32px;
+  color: var(--ink) !important;
+}
+.project-meta .arrow-diag svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  stroke: currentColor;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-card:hover .project-meta .arrow-diag svg,
+.project-meta .arrow-diag:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.detail-next .arrow-diag {
+  color: #ffffff !important;
+}
+.detail-next .arrow-diag svg {
+  width: 62px;
+  height: 62px;
+  display: block;
+  stroke: currentColor;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.detail-next a:hover .arrow-diag svg {
+  transform: translate(6px, -6px);
+}
+
+.project-hover {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+.project-hover svg {
+  width: 10px;
+  height: 10px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.header-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.header-cta svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.header-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.footer-primary-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+.footer-primary-link svg {
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.footer-primary-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.footer-right a, .contact-social a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+.footer-right a svg.icon-external,
+.contact-social a svg.icon-external {
+  width: 10px;
+  height: 10px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.footer-right a:hover svg.icon-external,
+.contact-social a:hover svg.icon-external {
+  transform: translate(2px, -2px);
+  opacity: 1;
+}
+
+.text-link-back {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+.text-link-back svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.text-link-back:hover svg {
+  transform: translateX(-4px) !important;
+}
+
+.journey-text {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.journey-text svg {
+  width: 10px;
+  height: 10px;
+  stroke: currentColor;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.project-select-check svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  display: block;
+}
+
+@media(max-width: 700px) {
+  .project-meta .arrow-diag {
+    width: 28px;
+    height: 28px;
+  }
+  .project-meta .arrow-diag svg {
+    width: 20px;
+    height: 20px;
+  }
+  .detail-next .arrow-diag svg {
+    width: 36px;
+    height: 36px;
+  }
+  .footer-primary-link svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+

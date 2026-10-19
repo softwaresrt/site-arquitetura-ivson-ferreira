@@ -15,7 +15,7 @@ ready(()=>{
     trigger.setAttribute('aria-controls',panel.id);
     const options=Array.from(native.options).filter(o=>o.value!=='');let highlight=0;
     const buttons=options.map((o,i)=>{
-      const item=document.createElement('button');item.type='button';item.className='project-select-option';item.setAttribute('role','option');item.setAttribute('aria-selected','false');item.setAttribute('data-highlight','false');item.setAttribute('tabindex','-1');item.dataset.value=o.value;item.innerHTML=`<span></span><span class="project-select-check" aria-hidden="true">✓</span>`;item.firstElementChild.textContent=o.textContent.trim();
+      const item=document.createElement('button');item.type='button';item.className='project-select-option';item.setAttribute('role','option');item.setAttribute('aria-selected','false');item.setAttribute('data-highlight','false');item.setAttribute('tabindex','-1');item.dataset.value=o.value;item.innerHTML=`<span></span><span class="project-select-check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>`;item.firstElementChild.textContent=o.textContent.trim();
       item.addEventListener('click',()=>{native.value=o.value;native.dispatchEvent(new Event('change',{bubbles:true}));sync();close(true)});
       item.addEventListener('pointerenter',()=>{highlight=i;setHighlight()});
       panel.append(item);return item;
