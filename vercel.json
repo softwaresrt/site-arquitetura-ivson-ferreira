@@ -65,6 +65,14 @@
     {
       "source": "/projeto/olhar-sobre-o-espaco/",
       "destination": "/projeto/olhar-sobre-o-espaco/index.html"
+    },
+    {
+      "source": "/projeto/varanda-gourmet",
+      "destination": "/projeto/varanda-gourmet/index.html"
+    },
+    {
+      "source": "/projeto/varanda-gourmet/",
+      "destination": "/projeto/varanda-gourmet/index.html"
     }
   ],
   "headers": [

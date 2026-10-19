@@ -7,7 +7,8 @@ const pages = ['index.html','404.html','sobre/index.html','portfolio/index.html'
 'projeto/terraco-e-piscina/index.html',
 'projeto/cozinha-e-convivencia/index.html',
 'projeto/materialidade-e-texturas/index.html',
-'projeto/olhar-sobre-o-espaco/index.html'];
+'projeto/olhar-sobre-o-espaco/index.html',
+'projeto/varanda-gourmet/index.html'];
 export default defineConfig({
     publicDir: 'public',
   build: {

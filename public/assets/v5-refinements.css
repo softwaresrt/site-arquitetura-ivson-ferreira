@@ -94,3 +94,304 @@ a.ivson-whatsapp:active {
 
 /* Make the top-right CTA visible over dark architectural photography. */
 body:has(.hero) .site-header:not(.scrolled) .header-cta{background:rgba(250,249,245,.87);color:#131815;border-color:#242925}
+
+/* ==========================================================================
+   Antes & Depois — Portfolio Card & Interactive Comparator
+   ========================================================================== */
+
+/* Badge on portfolio card */
+.badge-ba {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 5;
+  background: rgba(18, 22, 19, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #faf9f5;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 7px 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+  transition: transform 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+}
+.project-photo:hover .badge-ba {
+  transform: translateY(-2px);
+  background: rgba(18, 22, 19, 0.96);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Hover crossfade on card */
+.project-photo-ba {
+  position: relative;
+}
+.project-photo-ba .photo-before-hover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s var(--ease);
+  pointer-events: none;
+}
+.project-photo-ba:hover .photo-before-hover {
+  opacity: 1;
+  transform: scale(1.055);
+}
+
+/* Asymmetric 5th card height in homepage grid */
+.project-card:nth-child(5) .project-photo {
+  height: clamp(340px, 39vw, 620px);
+}
+
+/* Interactive Before & After Comparator */
+.ba-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 720px;
+  overflow: hidden;
+  background: #141815;
+  border-radius: 4px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+  cursor: ew-resize;
+  --ba-pos: 50%;
+}
+.ba-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.ba-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ba-layer-after {
+  z-index: 1;
+}
+.ba-layer-before {
+  z-index: 2;
+  clip-path: inset(0 calc(100% - var(--ba-pos, 50%)) 0 0);
+  -webkit-clip-path: inset(0 calc(100% - var(--ba-pos, 50%)) 0 0);
+  will-change: clip-path;
+}
+
+/* Floating labels inside the slider */
+.ba-label {
+  position: absolute;
+  top: 22px;
+  z-index: 4;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+.ba-label-before {
+  left: 22px;
+  background: rgba(22, 26, 23, 0.82);
+  color: #f7f6f0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.ba-label-after {
+  right: 22px;
+  background: rgba(247, 246, 240, 0.88);
+  color: #171b18;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Divider Handle */
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--ba-pos, 50%);
+  transform: translateX(-50%);
+  width: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  pointer-events: none;
+  will-change: left;
+}
+.ba-handle-line {
+  flex: 1;
+  width: 2px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+.ba-handle-thumb {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #1a1e1b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 0 0 3px rgba(255, 255, 255, 0.4);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ba-slider:active .ba-handle-thumb,
+.ba-slider:hover .ba-handle-thumb {
+  transform: scale(1.08);
+}
+
+/* Range input for accessibility and seamless dragging */
+.ba-input-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 7;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Instructions caption */
+.ba-instructions {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0 0;
+  text-align: center;
+}
+.ba-instructions .smallcap {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+/* Side-by-side comparative section below */
+.ba-side-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 50px;
+}
+.ba-side-card {
+  display: flex;
+  flex-direction: column;
+  background: #f4f2ea;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  border-radius: 2px;
+}
+.ba-side-media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #eae6dc;
+}
+.ba-side-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease);
+}
+.ba-side-card:hover .ba-side-media img {
+  transform: scale(1.03);
+}
+.ba-side-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(22, 26, 23, 0.86);
+  color: #faf9f5;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.ba-side-badge-after {
+  background: rgba(247, 246, 240, 0.92);
+  color: #171b18;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.ba-side-info {
+  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ba-side-info h3 {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.ba-side-info p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #555852;
+}
+
+@media(max-width: 700px) {
+  .badge-ba {
+    top: 14px;
+    left: 14px;
+    font-size: 9px;
+    padding: 6px 12px;
+  }
+  .ba-slider {
+    aspect-ratio: 1 / 1;
+    max-height: 480px;
+  }
+  .ba-label {
+    top: 14px;
+    font-size: 8px;
+    padding: 6px 11px;
+  }
+  .ba-label-before { left: 14px; }
+  .ba-label-after { right: 14px; }
+  .ba-handle-thumb {
+    width: 38px;
+    height: 38px;
+  }
+  .ba-handle-thumb svg {
+    width: 15px;
+    height: 15px;
+  }
+  .ba-side-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 30px;
+  }
+  .ba-side-info {
+    padding: 22px 18px 26px;
+  }
+  .project-card:nth-child(5) .project-photo {
+    height: clamp(350px, 110vw, 560px);
+  }
+}
+
