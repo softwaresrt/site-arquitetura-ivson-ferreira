@@ -1,0 +1,96 @@
+/* V5 – targeted polish; original green Three.js journey intentionally untouched. */
+.hero-picture { background-image:url('/assets/hero-pool-v5.webp') !important; background-position:center 55%; inset:-1.5%; filter:brightness(.92) contrast(1.1) saturate(1.04); transform:scale(1.01); will-change:auto; }
+.hero::before { background:linear-gradient(90deg, rgba(245,244,238,.83) 0%,rgba(245,244,238,.71) 29%,rgba(245,244,238,.23) 51%,rgba(245,244,238,0) 71%),linear-gradient(0deg,rgba(12,18,16,.43) 0%,transparent 19%); }
+.hero h1 { color:#101411; font-weight:400; text-shadow:0 1px 10px rgba(244,244,239,.25); }
+.hero-sub { color:#161b18 !important; font-weight:500 !important; text-shadow:0 1px 7px rgba(250,249,245,.5); max-width:520px; }
+.hero .eyebrow { color:#1b211d; text-shadow:0 1px 6px rgba(250,249,245,.4) }
+.hero .text-link { color:#141b18; }
+
+/* Remover marcação/texto Modelo 3D conceitual conforme solicitado */
+.journey-watermark { display: none !important; }
+
+/* Screen reader only utility - prevents accidental text rendering inside icon buttons */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* WhatsApp: floating circular button with official icon, no visible text */
+a.ivson-whatsapp {
+  position: fixed !important;
+  inset: auto 24px 24px auto !important;
+  width: 58px !important;
+  height: 58px !important;
+  max-width: 58px !important;
+  max-height: 58px !important;
+  padding: 0 !important;
+  aspect-ratio: 1 !important;
+  border-radius: 50% !important;
+  background: #25d366 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.42), 0 8px 30px rgba(0, 0, 0, 0.22) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 9999 !important;
+  text-decoration: none !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  overflow: hidden !important;
+}
+a.ivson-whatsapp svg {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  display: block !important;
+  fill: #ffffff !important;
+  flex: none !important;
+  pointer-events: none !important;
+}
+a.ivson-whatsapp:hover {
+  transform: translateY(-3px) scale(1.06) !important;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.55), 0 12px 35px rgba(0, 0, 0, 0.28) !important;
+}
+a.ivson-whatsapp:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+/* Evitar que transições CSS briguem com animações do GSAP durante scroll */
+.image-reveal:not(:hover) img,
+.project-photo:not(:hover) img,
+.material-item:not(:hover) img {
+  transition: filter 0.4s ease !important;
+}
+.image-reveal:hover img,
+.project-photo:hover img,
+.material-item:hover img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@media(max-width:700px){
+  .hero-picture{background-position:61% center;filter:brightness(.90) contrast(1.1) saturate(1.03);}
+  .hero::before{background:linear-gradient(90deg,rgba(245,244,238,.89),rgba(245,244,238,.64) 61%,transparent 100%),linear-gradient(0deg,rgba(12,18,16,.4),transparent 20%)}
+  .hero-sub{font-size:14px;line-height:1.55;font-weight:500;}
+  a.ivson-whatsapp{
+    inset:auto 18px 20px auto !important;
+    width:52px !important;
+    height:52px !important;
+    max-width:52px !important;
+    max-height:52px !important;
+  }
+  a.ivson-whatsapp svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+@media(prefers-reduced-motion:reduce){.hero-picture{transform:none!important}.hero h1,.hero-sub{text-shadow:none}}
+
+/* Make the top-right CTA visible over dark architectural photography. */
+body:has(.hero) .site-header:not(.scrolled) .header-cta{background:rgba(250,249,245,.87);color:#131815;border-color:#242925}

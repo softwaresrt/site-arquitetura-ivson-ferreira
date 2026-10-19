@@ -1,0 +1,84 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/sobre",
+      "destination": "/sobre/index.html"
+    },
+    {
+      "source": "/sobre/",
+      "destination": "/sobre/index.html"
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/portfolio/index.html"
+    },
+    {
+      "source": "/portfolio/",
+      "destination": "/portfolio/index.html"
+    },
+    {
+      "source": "/contato",
+      "destination": "/contato/index.html"
+    },
+    {
+      "source": "/contato/",
+      "destination": "/contato/index.html"
+    },
+    {
+      "source": "/privacidade",
+      "destination": "/privacidade/index.html"
+    },
+    {
+      "source": "/privacidade/",
+      "destination": "/privacidade/index.html"
+    },
+    {
+      "source": "/projeto/terraco-e-piscina",
+      "destination": "/projeto/terraco-e-piscina/index.html"
+    },
+    {
+      "source": "/projeto/terraco-e-piscina/",
+      "destination": "/projeto/terraco-e-piscina/index.html"
+    },
+    {
+      "source": "/projeto/cozinha-e-convivencia",
+      "destination": "/projeto/cozinha-e-convivencia/index.html"
+    },
+    {
+      "source": "/projeto/cozinha-e-convivencia/",
+      "destination": "/projeto/cozinha-e-convivencia/index.html"
+    },
+    {
+      "source": "/projeto/materialidade-e-texturas",
+      "destination": "/projeto/materialidade-e-texturas/index.html"
+    },
+    {
+      "source": "/projeto/materialidade-e-texturas/",
+      "destination": "/projeto/materialidade-e-texturas/index.html"
+    },
+    {
+      "source": "/projeto/olhar-sobre-o-espaco",
+      "destination": "/projeto/olhar-sobre-o-espaco/index.html"
+    },
+    {
+      "source": "/projeto/olhar-sobre-o-espaco/",
+      "destination": "/projeto/olhar-sobre-o-espaco/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install"
+}

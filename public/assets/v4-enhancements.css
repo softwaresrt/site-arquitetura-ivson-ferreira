@@ -1,0 +1,74 @@
+
+/* Short editorial chapter separators retained from V3 (no global 3D canvas). */
+.story-transition{height:clamp(135px,19vw,235px);position:relative;display:flex;align-items:center;justify-content:space-between;gap:25px;padding-inline:max(4.6vw,24px);overflow:hidden;background:linear-gradient(107deg,#f5f3ee,#e9e5dc 56%,#f5f3ed);border-top:1px solid #746b5d14;border-bottom:1px solid #746b5d14;isolation:isolate}
+.story-transition:not(.story-transition--material):before{content:'';position:absolute;width:47vw;height:47vw;max-width:520px;max-height:520px;border:1px solid #70685926;border-radius:50%;left:61%;top:50%;transform:translate(-30%,-50%);pointer-events:none}
+.story-transition-index{position:relative;z-index:1;font-size:9px;letter-spacing:.19em;color:#77796f;white-space:nowrap}
+.story-transition-line{height:1px;background:#b7b2a7;opacity:.65;flex:1;transform-origin:left;max-width:320px;position:relative;z-index:1}
+@media(max-width:700px){.story-transition:not(.story-transition--material){height:110px;padding-inline:20px}.story-transition-index{font-size:8px;letter-spacing:.1em}}
+/* V4: targeted UI/UX upgrades on top of untouched V3 visual identity. */
+/* Balanced, intentional footer instead of an empty left area. */
+.footer{padding:clamp(60px,7vw,106px) 0 26px}
+.footer-top{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(36px,7vw,140px);padding-bottom:clamp(65px,7.5vw,110px)}
+.footer-identity{min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.footer-manifesto{max-width:570px;margin:37px 0 23px;font-size:clamp(27px,3.3vw,51px);line-height:1.16;font-weight:300;letter-spacing:-.055em;color:#eeeae1}
+.footer-region{font-size:9px;letter-spacing:.16em;line-height:1.8;color:#a6aaa0}
+.footer-primary-link{display:inline-flex;align-items:center;gap:22px;margin-top:40px;border-bottom:1px solid #9b9c92;padding-bottom:13px;font-size:10px;letter-spacing:.13em;transition:color .2s,border-color .2s}
+.footer-primary-link:hover{color:#fff;border-color:#fff}
+.footer-right{justify-content:space-between;gap:45px;padding-top:7px}
+.footer-right a{line-height:1.55}
+.footer-bottom{align-items:center;flex-wrap:wrap;gap:16px 30px}
+.footer-credit{white-space:nowrap;text-decoration:none!important;letter-spacing:.03em;font-size:10px;display:inline-flex;align-items:baseline;gap:5px;opacity:.87;transition:opacity .2s}
+.footer-credit strong{font-size:11px;letter-spacing:.15em;color:#e4e3dc}
+.footer-credit:hover{opacity:1}
+/* User requested custom elegant dropdown, keyboard friendly, not native grey Safari select. */
+.project-select{position:relative;width:100%;z-index:15}
+.project-type-native{width:100%;appearance:none;-webkit-appearance:none;padding-right:25px!important;background:transparent!important}
+.project-select--enhanced .project-type-native{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;overflow:hidden!important;clip-path:inset(50%);pointer-events:none!important;top:0;left:0}
+.project-select-trigger{width:100%;border:1px solid #bcb9ae;border-radius:4px;background:rgba(255,255,255,.56);padding:13px 12px 13px 15px;min-height:49px;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;color:#272925;letter-spacing:-.01em;font-size:13px;transition:border-color .2s,background .2s,box-shadow .2s}
+.project-select-trigger:hover{border-color:#676d63;background:#f9f8f4}
+.project-select-trigger:focus-visible{outline:2px solid #596357;outline-offset:2px}
+.project-select-trigger[data-empty='true']{color:#7a7e76}
+.project-select-chevron{width:17px;height:17px;display:block;flex-shrink:0;transition:transform .2s}
+.project-select--open .project-select-chevron{transform:rotate(180deg)}
+.project-select--open .project-select-trigger{border-color:#6f776c;background:#faf9f4;box-shadow:0 2px 13px #292f2912}
+.project-select-panel{position:absolute;z-index:100;top:calc(100% + 7px);left:0;right:0;padding:7px;display:grid;gap:2px;border:1px solid #d1cdc1;border-radius:7px;background:#faf9f5;box-shadow:0 17px 32px #1a241a25;max-height:min(325px,45vh);overflow-y:auto;overscroll-behavior:contain}
+.project-select-panel[hidden]{display:none!important}
+.project-select-option{appearance:none;display:flex;align-items:center;gap:10px;justify-content:space-between;width:100%;border:none;background:transparent;border-radius:4px;padding:12px 12px;min-height:41px;text-align:left;font-size:13px;color:#292b27;cursor:pointer;transition:background .14s}
+.project-select-option:hover,.project-select-option:focus-visible,.project-select-option[data-highlight='true']{background:#eeebe3;outline:none}
+.project-select-option[aria-selected='true']{background:#e8e5dc;font-weight:600}
+.project-select-check{width:14px;opacity:0}
+.project-select-option[aria-selected='true'] .project-select-check{opacity:1}
+/* Replacement of ONLY the first transitional 3D: ambient volumetric material study, never scroll-bound. */
+.story-transition--material{height:clamp(260px,26vw,370px);padding-inline:max(5.5vw,24px);background:radial-gradient(circle at 73% 58%,#eee9df 0%,#eeebe5 31%,#f8f7f3 82%);justify-content:space-between;gap:3vw}
+.story-transition--material:before,.story-transition--material:after{display:none}
+.material-stage-text{position:relative;z-index:2;max-width:460px;pointer-events:none}
+.material-stage-caption{display:inline-block;font-size:10px;letter-spacing:.21em;font-weight:500;color:#77776e;margin-bottom:18px}
+.material-stage-text h3{font-size:clamp(28px,3.1vw,48px);line-height:1.09;letter-spacing:-.06em;font-weight:300;color:#2f3330;margin-bottom:14px}
+.material-stage-text p{font-size:clamp(12px,1.08vw,15px);line-height:1.6;max-width:365px;color:#6c6f69}
+.material-stage-sculpture{position:absolute;inset:0 0 0 36%;perspective:900px;perspective-origin:50% 55%;overflow:hidden;pointer-events:none}
+.sculpture-3d{position:absolute;top:50%;left:57%;width:250px;height:210px;transform-style:preserve-3d;transform:translate(-50%,-50%) rotateX(calc(-16deg + var(--tilt-y,0deg))) rotateY(calc(-27deg + var(--tilt-x,0deg)));transition:transform .45s cubic-bezier(.2,.75,.25,1);filter:drop-shadow(0 20px 20px #635d4c18)}
+.sculpture-3d span{position:absolute;display:block;transform-style:preserve-3d}
+.sculpture-slab{left:23px;top:31px;width:205px;height:142px;transform:translateZ(45px) rotateZ(-11deg);border-radius:5px;background:linear-gradient(116deg,#f9f7f1 0%,#c5bdab 38%,#f8f4e9 85%);border:1px solid #e0dacb;box-shadow:0 24px 24px #4b514313,0 3px 0 #b4aa97,0 6px 0 #c3b8a6}
+.sculpture-slab--middle{transform:translateZ(10px) rotateZ(7deg) translate(15px,6px);background:linear-gradient(125deg,#8d9187,#f8f8f1 46%,#b0b6a9);border:1px solid #d0d1c8}
+.sculpture-slab--back{transform:translateZ(-28px) rotateZ(-22deg) translate(4px,8px);background:linear-gradient(125deg,#b6a080,#eee4d2 55%,#ae9781);border:1px solid #c4b6a2}
+.sculpture-orbit{width:306px;height:306px;border-radius:50%;left:-28px;top:-52px;transform:translateZ(65px) rotateY(50deg) rotateX(35deg);border:1px solid rgba(117,104,82,.42);box-shadow:inset 0 0 0 1px #fff5;opacity:.8}
+.sculpture-sphere{width:54px;height:54px;left:190px;top:-35px;border-radius:50%;transform:translateZ(95px);background:radial-gradient(circle at 33% 27%,#fffcf1,#c9b495 40%,#7d745d 85%);box-shadow:10px 16px 25px #68635419}
+.sculpture-glow{width:360px;height:220px;left:-50px;top:12px;border-radius:50%;transform:translateZ(-50px);background:radial-gradient(ellipse,#fff8d8aa,transparent 68%);filter:blur(19px)}
+/* Remove scroll-linked visual layer; original green WebGL construction timeline remains intact. */
+#ivson-immersive-canvas{display:none!important}
+/* Optimization: prevent hidden below-fold DOM content from triggering costly layout/paint, not the original green section. */
+@supports (content-visibility:auto){.material-stage-text,.footer{contain-intrinsic-size:auto}}
+/* Do not defer image reveals or blur/fade them while scrolling. */
+.js-effects [data-reveal]:not(.seen){opacity:1!important;transform:none!important;transition:none!important}
+.js-effects [data-reveal].seen{transition:none!important}
+.project-photo img{backface-visibility:visible!important;will-change:auto!important}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}.footer-right{gap:25px}.material-stage-sculpture{inset:0 0 0 42%}.sculpture-3d{left:65%;transform:translate(-50%,-50%) scale(.82) rotateX(calc(-16deg + var(--tilt-y,0deg))) rotateY(calc(-27deg + var(--tilt-x,0deg)))}}
+@media(max-width:700px){.footer-top{display:flex;flex-direction:column;gap:35px;padding-bottom:45px}.footer-right{width:100%;margin-top:14px;justify-content:flex-start;gap:70px}.footer-manifesto{font-size:clamp(31px,9vw,46px);max-width:360px;margin:25px 0 18px}.footer-primary-link{margin-top:29px}.footer-bottom{gap:8px;align-items:flex-start}.footer-credit{margin-top:7px}.story-transition--material{height:260px;padding:28px 20px;align-items:flex-start}.material-stage-text{max-width:58%;align-self:center}.material-stage-text h3{font-size:clamp(25px,6vw,38px)}.material-stage-text p{font-size:11px;max-width:240px}.material-stage-caption{font-size:8px;margin-bottom:12px}.material-stage-sculpture{inset:0 0 0 40%}.sculpture-3d{left:70%;transform:translate(-50%,-50%) scale(.53) rotateX(-16deg) rotateY(-27deg)}.project-select-panel{max-height:290px}}
+@media(max-width:390px){.material-stage-text{max-width:62%}.material-stage-text h3{font-size:24px}.footer-right{gap:40px}}
+@media(prefers-reduced-motion:reduce){.sculpture-3d{transition:none!important}}
+
+/* Composited progress transforms do not invalidate page layout on every scroll tick. */
+.reading-progress{width:100%!important;transform:scaleX(0);transform-origin:left center;will-change:transform}
+.journey-progress span{width:100%!important;transform:scaleX(0);transform-origin:left center}
+/* No mobile translucent blur on every scroll: opaque menu is cheaper to composite. */
+@media(max-width:700px){.site-header.scrolled,.site-header.panel-open{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:#faf9f5!important}}

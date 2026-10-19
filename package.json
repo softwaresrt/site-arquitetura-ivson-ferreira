@@ -1,0 +1,21 @@
+{
+  "name": "ivson-ferreira-arquitetura-v5",
+  "private": true,
+  "version": "5.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.22"
+  },
+  "devDependencies": {
+    "vite": "^5.4.15"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}
